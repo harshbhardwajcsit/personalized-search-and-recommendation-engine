@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Buy Easy</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <!--Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.jpg" />
+
+    <!-- CSS Files -->
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/animate.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/font-awesome.css" />
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/player/YTPlayer.css" />
+    <link href="css/pro-bars.css" rel="stylesheet" />
+
+
+    <!-- End CSS Files -->
+
+</head>
+
+<body>
+<script>
+
+
+    function onset(image){
+
+        $.post( "/set", {product:image.name,categort:image.category} ).done(function(product,category) //ajax call
+        {
+
+            console.log("true");})
+
+        //console.log(image.src);
+        // var data={"data":image.src}
+
+    }
+
+
+
+
+</script>
+
+<!-- Navigation -->
+<section id="navigation" class="nav">
+    <!-- Navigation Inner -->
+    <div class="nav-inner">
+        <!-- Site Logo -->
+        <div class="site-logo fancy">
+            <a href="#" id="logo-text" class="scroll logo">Buy Easy
+            </a>
+        </div><!-- End Site Logo -->
+        <a class="mini-nav-button gray2"><i class="fa fa-bars"></i></a>
+        <!-- Navigation Menu -->
+        <div class="nav-menu">
+            <ul class="nav uppercase">
+                <li style="color:White;font-size:12px"><a href="#home" class="scroll">Electronics</a></li>
+                <li style="color:White;font-size:12px"><a href="#about" class="scroll">Youth</a></li>
+                <li><a href="#features" class="scroll">Men</a></li>
+                <li style="color:White;font-size:12px"><a href="#clients" class="scroll">Youth</a></li>
+                <li style="color:White;font-size:12px"><a href="#clients" class="scroll">Baby & Kids</a></li>
+                <li style="color:White;font-size:12px"><a href="#testimonial" class="scroll">Home & furniture</a></li>
+                <li style="color:White;font-size:12px"><a href="#contact" class="scroll">Books</a></li>
+                <li style="color:White;font-size:16px"><a href="#contact" class="scroll"> <%= name %></a></li>
+            </ul>
+        </div><!-- End Navigation Menu -->
+    </div><!-- End Navigation Inner -->
+</section><!-- End Navigation Section -->
+
+
+<!-- Home Section -->
+<section id="home" class="relative">
+    <div id="slides">
+        <div class="slides-container relative">
+            <!-- Slider Images -->
+            <div class="images1">
+                <img src="images/clients/41.jpg" height="400px" alt="" />
+            </div>
+            <div class="images2">
+                <img src="images/clients/43.jpg" height="538px" alt="" />
+            </div>
+            <div class="images3">
+                <img src="images/clients/45.jpg" height="538px" alt="" />
+            </div>
+            <div class="images4">
+                <img src="images/clients/41.jpg" height="538px" alt="" />
+            </div>
+            <!-- End Slider Images -->
+        </div>
+        <!-- Slider Controls -->
+        <nav class="slides-navigation">
+            <a href="#" class="next"></a>
+            <a href="#" class="prev"></a>
+        </nav>
+    </div><!-- End Home Slides -->
+
+</section><!-- End Home Section -->
+
+
+
+
+
+
+
+<!-- Clients -->
+<section id="clients" class="container">
+
+    <!-- Team Inner -->
+    <div class="inner team">
+
+        <!-- Header -->
+        <h1 class="header light gray3 fancy"><span class="colored">Popular </span>Categories</h1>
+
+        <!-- Description -->
+
+
+        <!-- Members -->
+        <div class="team-members inner-details">
+
+
+
+            <!-- Member -->
+            <div class="col-xs-4 member animated" data-animation="fadeInUp" data-animation-delay="300">
+                <div class="member-inner">
+                    <!-- Team Member Image -->
+                    <a class="team-image">
+                        <!-- Img -->
+                        <img src="images/clients/electronics.png" height="250px" alt="" />
+                    </a>
+                    <div class="member-details">
+                        <div class="member-details-inner">
+                            <!-- Name -->
+                            <h2 class="member-name light">Electronics</h2>
+                            <!-- Description -->
+
+                            <!-- Socials -->
+                            <div class="socials">
+                                <!-- Image -->
+                                <a href="#"><i class="fa fa-camera"></i></a>
+                            </div><!-- End Socials -->
+                        </div> <!-- End Detail Inner -->
+                    </div><!-- End Details -->
+                </div> <!-- End Member Inner -->
+            </div><!-- End Member -->
+
+
+            <!-- Member -->
+            <div class="col-xs-4 member animated" data-animation="fadeInUp" data-animation-delay="400">
+                <div class="member-inner">
+                    <!-- Team Member Image -->
+                    <a class="team-image">
+                        <!-- Img -->
+                        <img src="images/clients/home.png" height="250px" alt="" />
+                    </a>
+                    <div class="member-details">
+                        <div class="member-details-inner">
+                            <!-- Name -->
+                            <h2 class="member-name light">Home Appliances</h2>
+                            <!-- Description -->
+
+                            <!-- Socials -->
+                            <div class="socials">
+                                <!-- Link -->
+                                <a href="#"><i class="fa fa-link"></i></a>
+                            </div><!-- End Socials -->
+                        </div> <!-- End Detail Inner -->
+                    </div><!-- End Details -->
+                </div> <!-- End Member Inner -->
+            </div><!-- End Member -->
+
+            <!-- Member -->
+            <div class="col-xs-4 member animated" data-animation="fadeInUp" data-animation-delay="0">
+                <div class="member-inner">
+                    <!-- Team Member Image -->
+                    <a class="team-image">
+                        <!-- Img -->
+                        <img src="images/clients/fashion.png"  height="250px" alt="" />
+                    </a>
+                    <div class="member-details">
+                        <div class="member-details-inner">
+                            <!-- Name -->
+                            <h2 class="member-name light">Fashion</h2>
+                            <!-- Description -->
+                            <p class="member-description">Lorem ipsum dolor sit amet consectetur adipiscing.</p>
+                            <!-- Socials -->
+                            <div class="socials">
+                                <!-- Link -->
+                                <a href="#"><i class="fa fa-link"></i></a>
+                            </div><!-- End Socials -->
+                        </div> <!-- End Detail Inner -->
+                    </div><!-- End Details -->
+                </div> <!-- End Member Inner -->
+            </div><!-- End Member -->
+
+
+            <!-- Member -->
+            <div class="col-xs-4 member animated" data-animation="fadeInUp" data-animation-delay="100">
+                <div class="member-inner">
+                    <!-- Team Member Image -->
+                    <a class="team-image">
+                        <!-- Img -->
+                        <img src="images/clients/babyp.jpg" alt="" height="250px" />
+                    </a>
+                    <div class="member-details">
+                        <div class="member-details-inner">
+                            <!-- Name -->
+                            <h2 class="member-name light">Baby Products</h2>
+                            <!-- Description -->
+                            <p class="member-description">Lorem ipsum dolor sit amet consectetur adipiscing.</p>
+                            <!-- Socials -->
+                            <div class="socials">
+                                <!-- Image -->
+                                <a href="#"><i class="fa fa-camera"></i></a>
+                            </div><!-- End Socials -->
+                        </div> <!-- End Detail Inner -->
+                    </div><!-- End Details -->
+                </div> <!-- End Member Inner -->
+            </div><!-- End Member -->
+
+
+            <!-- Member -->
+            <div class="col-xs-4 member animated" data-animation="fadeInUp" data-animation-delay="200">
+                <div class="member-inner">
+                    <!-- Team Member Image -->
+                    <a class="team-image">
+                        <!-- Img -->
+                        <img src="images/clients/Men.jpg" height="250px" alt="" />
+                    </a>
+                    <div class="member-details">
+                        <div class="member-details-inner">
+                            <!-- Name -->
+                            <h2 class="member-name light">Men Products</h2>
+                            <!-- Description -->
+                            <p class="member-description">Lorem ipsum dolor sit amet consectetur adipiscing.</p>
+                            <!-- Socials -->
+                            <div class="socials">
+                                <!-- Link -->
+                                <a href="#"><i class="fa fa-link"></i></a>
+                            </div><!-- End Socials -->
+                        </div> <!-- End Detail Inner -->
+                    </div><!-- End Details -->
+                </div> <!-- End Member Inner -->
+            </div><!-- End Member -->
+
+            <!-- Member -->
+            <div class="col-xs-4 member animated" data-animation="fadeInUp" data-animation-delay="500">
+                <div class="member-inner">
+                    <!-- Team Member Image -->
+                    <a class="team-image">
+                        <!-- Img -->
+                        <img src="images/clients/women.jpg" alt="" />
+                    </a>
+                    <div class="member-details">
+                        <div class="member-details-inner">
+                            <!-- Name -->
+                            <h2 class="member-name light">Women Care Products</h2>
+                            <!-- Description -->
+
+                            <!-- Socials -->
+                            <div class="socials">
+                                <!-- Image -->
+                                <a href="#"><i class="fa fa-camera"></i></a>
+                            </div><!-- End Socials -->
+                        </div> <!-- End Detail Inner -->
+                    </div><!-- End Details -->
+                </div> <!-- End Member Inner -->
+            </div><!-- End Member -->
+
+
+        </div><!-- End Members -->
+
+
+
+    </div><!-- End Team Inner -->
+</section><!-- End Team Section -->
+<!-- Testimonials -->
+<section>
+</section><!-- End Testimonials Section -->
+
+<!-- Blockquote -->
+<section id="blockquote">
+
+
+
+</section><!-- End Blockquote Section -->
+
+<!-- Contact Section -->
+<section id="contact" class="container parallax4">
+    <!-- Contact Inner -->
+    <div class="inner contact">
+
+        <img src="images/clients/45.jpg" id="1" name="addidas" category="shoes"  height="100px" alt="" onclick="onset(this)"/>
+        <img src="images/clients/45.jpg" height="100px" alt="" />
+        <img src="images/clients/45.jpg" height="100px" alt="" />
+
+    </div><!-- End Inner -->
+</section><!-- End Contact Section -->
+
+
+
+<!-- Site Socials and Address -->
+<section id="site-socials" class="no-padding white-bg">
+    <div class="site-socials inner no-padding">
+        <!-- Socials -->
+        <div class="socials animated" data-animation="fadeInLeft" data-animation-delay="400">
+            <!-- Facebook -->
+            <a href="#" target="_blank" class="social">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <!-- Twitter -->
+            <a href="#" target="_blank" class="social">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <!-- Instagram -->
+            <a href="#" class="social">
+                <i class="fa fa-instagram"></i>
+            </a>
+            <!-- Linkedin -->
+            <a href="#" target="_blank" class="social">
+                <i class="fa fa-linkedin"></i>
+            </a>
+            <!-- Vimeo -->
+            <a href="#" target="_blank" class="social">
+                <i class="fa fa-vimeo-square"></i>
+            </a>
+            <!-- Youtube -->
+            <a href="#" target="_blank" class="social">
+                <i class="fa fa-youtube"></i>
+            </a>
+            <!-- Google Plus -->
+            <a href="#" target="_blank" class="social">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </div>
+        <!-- Adress, Mail -->
+        <div class="address socials animated" data-animation="fadeInRight" data-animation-delay="500">
+            <!-- Phone Number, Mail -->
+            <p>Phone: +91 9829339403 Email : <a href="mailto:info@Fitness.com" class="colored">info@Fitness.com</a>Gulshan tower (Lanka Puri), Ram Nagar, Shastri Nagar, Jaipur, Rajasthan 302016</p>
+            <!-- Top Button -->
+            <a href="#home" class="scroll top-button">
+                <i class="fa fa-arrow-circle-up fa-2x"></i>
+            </a>
+        </div><!-- End Adress, Mail -->
+    </div><!-- End Inner -->
+</section><!-- End Site Socials and Address -->
+
+
+
+<!-- Footer -->
+<footer id="footer" class="footer">
+    <!-- Your Company Name -->
+    <img src="public/images/favicon.jpg" width="100" alt="Logo" />
+    <!-- Copyright -->
+    <p class="copyright normal">© 2016 <span class="colored">Buy Easy</span> All Rights Reserved.</p>
+</footer><!-- End Footer -->
+
+<!-- JS Files -->
+
+
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.appear.js"></script>
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="js/modernizr-latest.js"></script>
+<script type="text/javascript" src="js/SmoothScroll.js"></script>
+<script type="text/javascript" src="js/jquery.parallax-1.1.3.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/jquery.superslides.js"></script>
+<script type="text/javascript" src="js/jquery.flexslider.js"></script>
+<script type="text/javascript" src="js/jquery.mb.YTPlayer.js"></script>
+<script type="text/javascript" src="js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="js/jquery.slabtext.js"></script>
+<script type="text/javascript" src="js/plugins.js"></script>
+
+<script>
+
+    $("a.about-icon").hover(function () {
+        $(this).children("i").addClass("fa-spin");
+    }, function(){
+        $(this).children("i").removeClass("fa-spin");
+    });
+
+</script>
+
+
+</body>
+
+</html>
