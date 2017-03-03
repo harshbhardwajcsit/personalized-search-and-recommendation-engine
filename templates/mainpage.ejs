@@ -33,7 +33,7 @@
 
     function onset(image){
 
-        $.post( "/set", {product:image.name,categort:image.category} ).done(function(product,category) //ajax call
+        $.post( "/set", {product:image.name,category:image.value} ).done(function(product,category) //ajax call
         {
 
             console.log("true");})
@@ -294,13 +294,47 @@
 <!-- Contact Section -->
 <section id="contact" class="container parallax4">
     <!-- Contact Inner -->
-    <div class="inner contact">
 
-        <img src="images/clients/45.jpg" id="1" name="addidas" category="shoes"  height="100px" alt="" onclick="onset(this)"/>
-        <img src="images/clients/45.jpg" height="100px" alt="" />
-        <img src="images/clients/45.jpg" height="100px" alt="" />
+        <div class="row cat_promotion_box lifestyle">
+            <h2>Lifestyle            </h2>
+            <input type="hidden" class="initial_tab_display_homepage" data-tab="0" data-block="" data-id="Lifestyle" data-attr="4528" position="17" blkname="Lifestyle">
+            <div class="tabbing">
+                <div class="tabbing_products crousel_products">
+                    <ul id="Lifestyle" class="imgScroll regular slick-initialized slick-slider">
+                        <button type="button" data-role="none" class="slick-prev slick-arrow slick-disabled" aria-label="Previous" role="button" aria-disabled="true" style="display: inline-block;">Previous</button>
+                        <div aria-live="polite" class="slick-list draggable">
+                            <div class="slick-track" role="listbox" style="opacity: 1; width: 2820px; transform: translate3d(0px, 0px, 0px);">
+                                <li class="slick-slide slick-current slick-active" style="width: 235px;" tabindex="-1" role="option" aria-describedby="slick-slide30" data-slick-index="0" aria-hidden="false">
+                                    <a target="_blank" id="0" href="http://www.shopclues.com/footwear-en/mens-shoes.html?br[]=205862&amp;br[]=1351110&amp;df[]=61.00-80.00&amp;fsrc=discount_percentage,brand" om-zone="south" omnirel="|Home|B17P1|NA|NA|NA|0|NA|Lifestyle" onclick="hometracking(this)" data-id="Lifestyle" tabindex="0">
+                                        <img data-img="http://cdn.shopclues.com/images/thumbnails/37814/200/200/ztempCZos6Q1487321882.jpg" src="http://cdn.shopclues.com/images/thumbnails/37814/200/200/ztempCZos6Q1487321882.jpg">
+                                        <h4>Red Tape Footwear</h4>
+                                        <p>Flat 65% Off</p>
+                                        <span class="discount_off" style="display:none">% off</span>
+                                        </a></li>
+                                <li class="slick-slide slick-active" style="width: 235px;" tabindex="-1" role="option" aria-describedby="slick-slide31" data-slick-index="1" aria-hidden="false">
+                                    <a target="_blank" id="0" href="http://www.shopclues.com/jewelry-and-watches/watches-367.html?sp=0,399&amp;bp=null&amp;sprice=0&amp;eprice=399&amp;is_trm[]=y&amp;is_cod[]=y&amp;fsrc=is_cod,is_trm" om-zone="south" omnirel="|Home|B17P2|NA|NA|NA|0|NA|Lifestyle" onclick="hometracking(this)" data-id="Lifestyle" tabindex="0">
+                                        <img data-img="http://cdn.shopclues.com/images/thumbnails/57841/200/200/ft2948fashiontrackoriginalimaepphfppvyzege1487786719.jpg" src="http://cdn.shopclues.com/images/thumbnails/57841/200/200/ft2948fashiontrackoriginalimaepphfppvyzege1487786719.jpg">
+                                        <h4>Handpicked Watches</h4>
+                                        <p>Under Rs.399</p>
+                                        <span class="discount_off" style="display:none">% off</span>
+                                    </a></li>
 
-    </div><!-- End Inner -->
+
+                            </div>
+                        </div>
+                        <button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next" role="button" style="display: block;" aria-disabled="false">Next</button></ul>
+                </div>
+            </div>
+        </div>
+
+        <input type="image"  src="images/clients/45.jpg" alt=""  name="zara" value="lady_shoes"  height="300" width="300"  onclick="onset(this)"/>
+
+        <input type="image"  src="images/clients/45.jpg" alt=""  name="zari" value="saare"  height="300" width="300"  onclick="onset(this)"/>
+
+        <input type="image"  src="images/clients/45.jpg" alt=""  name="topmyHilfe" value="categoty:purse,color:blue"  height="300" width="300"  onclick="onset(this)"/>
+
+        <input type="image"  src="images/clients/45.jpg" alt=""  name="TomBat" value="Gents Belt"  height="300" width="300"  onclick="onset(this)"/>
+
 </section><!-- End Contact Section -->
 
 
@@ -388,6 +422,8 @@
     });
 
 </script>
+
+<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
 
 
 </body>
