@@ -1,18 +1,27 @@
+
+//libraries include
 var express=require('express');
 var bodyParser=require("body-parser");
-var Usermatrix=require('Usermatrix');
+var algorithm=require("./algorithm.js");
+
 var ejs=require('ejs');
 var firebase=require('firebase');
+
+
+///mongodb connections
 var mongoose=require("mongoose");
 mongoose.connect("mongodb://localhost:27017/users");
 var Schema=mongoose.Schema;
 
 var app=express();
 
+
+//form body encoding
 app.use(bodyParser.json ());                         //parsing commands use for post data
 app.use(bodyParser.urlencoded({extended:true}));
-app.set('views','./templates');
 
+//front end templating libraries :: {using ejs}
+app.set('views','./templates');
 app.set('view engine', 'ejs');
 
 // // public middleware for front-end
@@ -40,13 +49,11 @@ var u=new userE();
 //APi for session management
 var username;
 app.post("/movetomainpage",function (req,res) {
-    //var u1=new User(req.body);
+
 
     username=req.body.Email;
-     var name={"name":username}
-
+    var name={"name":username}
     console.log('username  '+username);
-
     res.render('mainpage',name);
 });
 
@@ -55,33 +62,34 @@ app.post("/movetomainpage",function (req,res) {
 
 app.post("/set",function (req,res) {
 
-    var product=req.body.product;
-    var category=req.body.category;
-
-    u.userEmail=username;
-
+    var product = req.body.product;
+    var category = req.body.category;
+    u.userEmail = username;
     u.category.push(product);
-
- 
 
 
     u.save(function (err, result) {
-        if(err){
+        if (err) {
             throw err;             //saving data to user collections
-
         }
-        else
-        {
+        else {
             console.log(result);
-            res.send(result);
+
+            //calling fuction form file 'algorithm.js' with complete user profile as parameter
+            algorithm.get(u);
+
+            //res.send(result);
         }
     });
 
 
 
 
-});
 
+})
+
+
+//deployment on server
 var port=process.env.PORT || 3000;
 app.listen(port,function (req,res) {
     console.log("server started");

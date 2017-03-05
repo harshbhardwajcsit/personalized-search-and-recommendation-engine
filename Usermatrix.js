@@ -32,20 +32,24 @@ var MatrixSchema=Schema({
 var userMatrix=mongoose.model('userMatrix',MatrixSchema);
 //var matrix=new userMatrix();
 
-
+var db=mongoose.connection;
 
 csv.fromPath("matrix.csv", {headers : true})
 
     .on("data", function(data){
 
         var record = new userMatrix(data);
-        //console.log(data);
+
+        console.log(record);
+
+
+       /////////save training data into database////////////
         record.save( function( err, user ){
 
             if(!err){
 
                 //console.log('Saved');
-                console.log(user);
+                //console.log(user);
             }
 
             else{
@@ -57,11 +61,10 @@ csv.fromPath("matrix.csv", {headers : true})
         });
 
     })
-
     .on("end", function(){
 
         //console.log("done");
 
     });
 
-
+db.close();
