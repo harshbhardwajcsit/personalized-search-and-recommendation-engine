@@ -1,16 +1,19 @@
-
 //libraries include
 var express=require('express');
+var sleep = require('system-sleep');
 var bodyParser=require("body-parser");
-var algorithm=require("./algorithm.js");
 
+//var algorithm=require("./algorithm");
+var mongoose=require("mongoose");
 var ejs=require('ejs');
 var firebase=require('firebase');
+var matrixs=require('./Usermatrix');
 
 
 ///mongodb connections
-var mongoose=require("mongoose");
-mongoose.connect("mongodb://localhost:27017/users");
+
+
+mongoose.createConnection("mongodb://localhost:27017/users");
 var Schema=mongoose.Schema;
 
 var app=express();
@@ -66,32 +69,27 @@ app.post("/set",function (req,res) {
     var category = req.body.category;
     u.userEmail = username;
     u.category.push(product);
-
-
+    
     u.save(function (err, result) {
         if (err) {
             throw err;             //saving data to user collections
         }
         else {
-            console.log(result);
+            //console.log(result);
 
-            //calling fuction form file 'algorithm.js' with complete user profile as parameter
-            algorithm.get(u);
+       //calling fuction form file 'algorithm.js' with complete user profile as parameter
 
-            //res.send(result);
+            matrixs.get(u);
+            sleep(5*1000); // sleep for 10 seconds
+            matrixs.showPrediction();
+            
         }
     });
-
-
-
-
-
 })
-
-
 //deployment on server
 var port=process.env.PORT || 3000;
 app.listen(port,function (req,res) {
-    console.log("server started");
+     console.log("server started");
+
 
 })
