@@ -110,36 +110,38 @@ function get(options) {   //options is the reference of userprofile from index f
 
     }
     
+    function showPredictions() {
+
+        console.log("*******************************************************************************************************************");
+        console.log(array_size);
+        console.log("Student",fStudent/array_size);
+        console.log("HomeMaker",fHomeMaker/array_size);
+        console.log("ItProfessional",fItProfessional/array_size);
+        console.log("SalesMan",fSalesMan/array_size);
+        console.log("SeniorCitizen",fSeniorCitizen/array_size);
+        console.log("Teacher",fTeachers/array_size);
+        console.log("Gamer",fGamer/array_size);
+        console.log("Traveller",fTraveller/array_size);
+        console.log("SportsMan",fSportsMan/array_size);
+        console.log("Medical",fMedical/array_size);
+        console.log("Artist",fArtist/array_size);
+        console.log("PhotoGrapher",fPhotoGrapher/array_size);
+        console.log("BusinessMan",fBusinessMan/array_size);
+        console.log("Musician",fMusician/array_size);
+        console.log("Fitness",fFitneness/array_size);
+        console.log("JobSeekers",fJobSeekers/array_size);
+        console.log("Others",fOthers/array_size);
+        console.log("*******************************************************************************************************************");
+
+    }
+
+
 
 
 }
 
 
 
-function showPredictions() {
-
-    console.log("*******************************************************************************************************************");
-    console.log(array_size);
-    console.log("Student",fStudent/array_size);
-    console.log("HomeMaker",fHomeMaker/array_size);
-    console.log("ItProfessional",fItProfessional/array_size);
-    console.log("SalesMan",fSalesMan/array_size);
-    console.log("SeniorCitizen",fSeniorCitizen/array_size);
-    console.log("Teacher",fTeachers/array_size);
-    console.log("Gamer",fGamer/array_size);
-    console.log("Traveller",fTraveller/array_size);
-    console.log("SportsMan",fSportsMan/array_size);
-    console.log("Medical",fMedical/array_size);
-    console.log("Artist",fArtist/array_size);
-    console.log("PhotoGrapher",fPhotoGrapher/array_size);
-    console.log("BusinessMan",fBusinessMan/array_size);
-    console.log("Musician",fMusician/array_size);
-    console.log("Fitness",fFitneness/array_size);
-    console.log("JobSeekers",fJobSeekers/array_size);
-    console.log("Others",fOthers/array_size);
-    console.log("*******************************************************************************************************************");
-
-}
 
 
 module.exports.get=get;
