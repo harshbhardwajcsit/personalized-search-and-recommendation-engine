@@ -79,7 +79,7 @@ app.post("/set",function (req,res) {
 
        //calling fuction form file 'algorithm.js' with complete user profile as parameter
 
-            matrixs.get(u);
+            matrixs.get(product);
             //sleep(5*1000); // sleep for 10 seconds
           //  matrixs.showPrediction();
             
