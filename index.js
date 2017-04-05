@@ -9,6 +9,10 @@ var ejs=require('ejs');
 var firebase=require('firebase');
 var matrixs=require('./Usermatrix');
 
+var Client = require('node-rest-client').Client;
+
+var client = new Client();
+
 
 ///mongodb connections
 
@@ -62,7 +66,7 @@ app.post("/movetomainpage",function (req,res) {
 
 
 //api for catching users actions
-
+var URL="";
 app.post("/set",function (req,res) {
 
     var product = req.body.product;
@@ -75,14 +79,48 @@ app.post("/set",function (req,res) {
             throw err;             //saving data to user collections
         }
         else {
-            //console.log(result);
+             console.log(product)
 
-       //calling fuction form file 'algorithm.js' with complete user profile as parameter
+            // direct way
+            client.get("https://www.linkedin.com", function (data, response) {
+                // parsed response body as js object
+                console.log(data);
+                // raw response
+                console.log(response);
+            });
 
-            matrixs.get(product);
-            //sleep(5*1000); // sleep for 10 seconds
-          //  matrixs.showPrediction();
-            
+
+            // registering remote methods
+            client.registerMethod("jsonMethod", "https://www.linkedin.com", "GET");
+
+            client.methods.jsonMethod(function (data, response) {
+                // parsed response body as js object
+                console.log(data);
+                // raw response
+                console.log(response);
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ //**********************calling to functions**********************//
+            //matrixs.get(product);
+            //matrixs.sendToML(product)
+    ;
+
         }
     });
 })

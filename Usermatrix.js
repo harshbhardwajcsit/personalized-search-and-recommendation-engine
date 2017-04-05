@@ -1,4 +1,7 @@
 var express=require('express');
+var SetDS = require('set-ds');
+var setA = new SetDS();
+
 var math = require('mathjs');
 var mongoose=require("mongoose");
 var csv = require("fast-csv");
@@ -175,9 +178,16 @@ function get(options)
    
 }
 
+function sendToML(options)
+{
+    setA.add(options);
+    console.log(setA.items);
+
+
+}
 
 
 
-
+module.exports.sendToML=sendToML;
 module.exports.get=get;
 //module.exports.showPrediction=showPredictions;
