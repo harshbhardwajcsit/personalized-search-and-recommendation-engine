@@ -101,21 +101,6 @@ app.post("/set",function (req,res) {
             });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  //**********************calling to functions**********************//
             //matrixs.get(product);
             //matrixs.sendToML(product)
