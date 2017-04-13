@@ -9,9 +9,6 @@ var ejs=require('ejs');
 var firebase=require('firebase');
 var matrixs=require('./Usermatrix');
 
-var Client = require('node-rest-client').Client;
-
-var client = new Client();
 
 
 ///mongodb connections
@@ -61,7 +58,7 @@ app.post("/movetomainpage",function (req,res) {
     username=req.body.Email;
     var name={"name":username}
     console.log('username  '+username);
-    res.render('mainpage',name);
+    res.render('newproduct',name);
 });
 
 
@@ -80,31 +77,12 @@ app.post("/set",function (req,res) {
         }
         else {
              console.log(product)
-
-            // direct way
-            client.get("https://www.linkedin.com", function (data, response) {
-                // parsed response body as js object
-                console.log(data);
-                // raw response
-                console.log(response);
-            });
-
-
-            // registering remote methods
-            client.registerMethod("jsonMethod", "https://www.linkedin.com", "GET");
-
-            client.methods.jsonMethod(function (data, response) {
-                // parsed response body as js object
-                console.log(data);
-                // raw response
-                console.log(response);
-            });
-
-
+            
  //**********************calling to functions**********************//
-            //matrixs.get(product);
-            //matrixs.sendToML(product)
-    ;
+            
+             //matrixs.get(product);   //for summation algorithm
+            
+               matrixs.sendToML(product);
 
         }
     });

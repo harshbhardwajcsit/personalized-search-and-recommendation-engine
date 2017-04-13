@@ -1,6 +1,7 @@
 var express=require('express');
 var SetDS = require('set-ds');
 var setA = new SetDS();
+var request = require('request');
 
 var math = require('mathjs');
 var mongoose=require("mongoose");
@@ -74,7 +75,7 @@ function get(options)
     for (var count = 0; count < 1; count++) {
 
          target_items.push(options);  //storing products
-         var json_object=
+
          userMatrix.findOne({Item: options}, function(err,obj) {
             if(!err) {
                 var myJsonString = JSON.stringify(obj);
@@ -178,16 +179,29 @@ function get(options)
    
 }
 
+
 function sendToML(options)
 {
-    setA.add(options);
-    console.log(setA.items);
+    target_items.push(parseInt(options));
+    console.log(target_items);
+    var a=[88,93,123,45];
 
-
+    var url="http://35.184.41.195:5000/product?";
+    url = url + "productid=" + target_items[0];
+    for(i=1;i<target_items.length;i++) {
+        url = url + "&productid=" + target_items[i] ;
+    }
+console.log(url);
+    request(url, function (error, response, body) {
+        console.log('error:', error); // Print the error if one occurred
+        console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+        console.log('body:', body); // Print the HTML for the Google homepage.
+        
+    });
 }
 
 
-
+// export methods for use
 module.exports.sendToML=sendToML;
 module.exports.get=get;
-//module.exports.showPrediction=showPredictions;
+
