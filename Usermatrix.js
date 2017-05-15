@@ -2,7 +2,7 @@ var express=require('express');
 var SetDS = require('set-ds');
 var setA = new SetDS();
 var request = require('request');
-
+var firebase=require('firebase');
 var math = require('mathjs');
 var mongoose=require("mongoose");
 var csv = require("fast-csv");
@@ -37,7 +37,23 @@ var MatrixSchema=Schema({
 
 var userMatrix=mongoose.model('userMatrix',MatrixSchema);
 
+//user-profile table permission
+// Set the configuration for your app
+// TODO: Replace with your project's config object
+var config = {
+    apiKey: " AIzaSyAvwW4T3HMAhCpu6768SbT5S5IGnrWx4-4",
+    authDomain: "recommender-5f0fc.firebaseapp.com",
+    databaseURL: "https://recommender-5f0fc.firebaseio.com/",
+    storageBucket: "bucket.appspot.com"
+};
+firebase.initializeApp(config);
 
+// Get a reference to the database service
+var database = firebase.database();
+var Profile=database.ref();
+
+
+//getting csv to database
 csv.fromPath("matrix.csv", {headers : true})
     .on("data", function(data){
         record = new userMatrix(data);
@@ -172,31 +188,33 @@ function get(options)
                 else{console.log(err);}
         });
 
-
-
-
     }
-   
+
 }
 
 
-function sendToML(options)
+function sendToML(username,options)
 {
     target_items.push(parseInt(options));
     console.log(target_items);
-    var a=[88,93,123,45];
+    var id=username.split('@')[0]
+    //username parsing form email
+    console.log("user :" + id);
+
+
 
     var url="http://35.184.41.195:5000/product?";
     url = url + "productid=" + target_items[0];
     for(i=1;i<target_items.length;i++) {
         url = url + "&productid=" + target_items[i] ;
     }
-console.log(url);
+    console.log("REQUEST : "+url);
     request(url, function (error, response, body) {
         console.log('error:', error); // Print the error if one occurred
         console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
         console.log('body:', body); // Print the HTML for the Google homepage.
-        
+        Profile.child(id).set(body); // setting values of the profile-mapping
+
     });
 }
 

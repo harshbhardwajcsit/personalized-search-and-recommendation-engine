@@ -82,13 +82,13 @@ app.post("/set",function (req,res) {
             
              //matrixs.get(product);   //for summation algorithm
             
-               matrixs.sendToML(product);
+               matrixs.sendToML(username,product);
 
         }
     });
 })
 //deployment on server
-var port=process.env.PORT || 3000;
+var port=process.env.PORT || 3002;
 app.listen(port,function (req,res) {
      console.log("server started");
 
